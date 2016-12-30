@@ -12,10 +12,7 @@ namespace TwitterSample {
         "Your AccessToken",
         "Your AccessTokenSecret");
       string message = Console.ReadLine();
-      WebResponse response = twitter.Send(message);
-      using (StreamReader reader = new StreamReader(response.GetResponseStream())) {
-        Console.WriteLine("Response: {0}", reader.ReadToEnd());
-      }
+      twitter.Send(message);
     }
   }
 }

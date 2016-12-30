@@ -53,12 +53,12 @@ namespace MaisuLib.Twitter {
     /// </summary>
     /// <param name="text">Message</param>
     /// <returns>Response</returns>
-    public WebResponse Send(string text) {
+    public void Send(string text) {
       CustomParameters.Add("status", text.ToRFC3986());
-      return Execute();
+      Execute();
     }
 
-    private WebResponse Execute() {
+    private void Execute() {
       var basicParameters = GetBasicParameters();
       Parameters = basicParameters.Concat(CustomParameters).ToDictionary(x => x.Key, x => x.Value);
       var signature = GenerateSignature(Parameters);
@@ -75,24 +75,21 @@ namespace MaisuLib.Twitter {
         stream.Write(body, 0, body.Length);
       }
 
-      WebResponse res;
       try {
-        res = request.GetResponse();
+        WebResponse response = request.GetResponse();
       } catch (WebException ex) {
-        string error = "";
         using (StreamReader reader = new StreamReader(ex.Response.GetResponseStream())) {
-          error = reader.ReadToEnd();
+          string error = reader.ReadToEnd();
+          Match regx = new Regex(@"(\""errors""\:\[\{""code""\:)(?<code>.+?)(,""message""\:"")(?<msg>.+?)("")", RegexOptions.IgnoreCase).Match(error);
+          int code = int.Parse(regx.Groups["code"].Value);
+          string msg = regx.Groups["msg"].Value;
+          throw new TwitterException(msg);
         }
-        Match regx = new Regex(@"(\""errors""\:\[\{""code""\:)(?<code>.+?)(,""message""\:"")(?<msg>.+?)("")", RegexOptions.IgnoreCase).Match(error);
-        int code = int.Parse(regx.Groups["code"].Value);
-        string msg = regx.Groups["msg"].Value;
-        throw new TwitterException(msg);
       } catch {
         throw;
       } finally {
         request.Abort();
       }
-      return res;
     }
 
     private Dictionary<string, string> GetBasicParameters() {
