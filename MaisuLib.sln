@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaisuLib", "MaisuLib\MaisuLib.csproj", "{0F760591-918F-4A76-8D59-D85D9BF5D6F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterSample", "TwitterSample\TwitterSample.csproj", "{B7417FC3-12F9-4312-805D-2BD8B9AE9643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchSample", "TwitchSample\TwitchSample.csproj", "{74816F8B-AE39-4F47-8A8A-4A78B7B034CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F760591-918F-4A76-8D59-D85D9BF5D6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F760591-918F-4A76-8D59-D85D9BF5D6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F760591-918F-4A76-8D59-D85D9BF5D6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F760591-918F-4A76-8D59-D85D9BF5D6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7417FC3-12F9-4312-805D-2BD8B9AE9643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7417FC3-12F9-4312-805D-2BD8B9AE9643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7417FC3-12F9-4312-805D-2BD8B9AE9643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7417FC3-12F9-4312-805D-2BD8B9AE9643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74816F8B-AE39-4F47-8A8A-4A78B7B034CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74816F8B-AE39-4F47-8A8A-4A78B7B034CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74816F8B-AE39-4F47-8A8A-4A78B7B034CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74816F8B-AE39-4F47-8A8A-4A78B7B034CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
