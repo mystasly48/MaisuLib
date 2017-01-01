@@ -19,8 +19,6 @@ Twitch も開発予定。
 [サンプル](https://github.com/mystasly48/MaisuLib/blob/master/TwitterSample/Program.cs)
 ```csharp
 using System;
-using System.IO;
-using System.Net;
 using MaisuLib.Twitter;
 
 namespace TwitterSample {
