@@ -2,13 +2,13 @@
 
 自分用に作成したライブラリ。
 
-今は Twitter のみ。
+現時点では Twitter と Slack のみ。
 
-Twitch も開発予定。
+Twitch は開発中。
 
 ## MaisuLib.Twitter
 
-自分用に作成したTwitterライブラリ。
+ツイートの送信のみに対応したTwitterライブラリ。
 
 `ConsumerKey`, `ConsumerSecret`, `AccessToken`, `AccessTokenSecret` を渡して `Sned(string)` してツイート送信するだけ。
 
@@ -32,6 +32,30 @@ namespace TwitterSample {
       string message = Console.ReadLine();
       twitter.Send(message);
     }
+  }
+}
+```
+
+## MaisuLib.Slack
+
+メッセージの送信のみに対応したSlackライブラリ。
+
+Incoming Webhook を登録して生成された `Webhook URL` を指定して  
+`Send(text, channel, username, icon_emoji, icon_url)` を実行するだけ。
+
+[サンプル](https://github.com/mystasly48/MaisuLib/blob/master/SlackSample/Program.cs)
+```csharp
+using System;
+using MaisuLib.Slack;
+
+namespace SlackSample {
+  class Program {
+    static void Main(string[] args) {
+	  Slack slack = new Slack("Your webhook url");
+	  string message = Console.ReadLine();
+	  string response = slack.Send(message);
+	  Console.WriteLine(response);
+	}
   }
 }
 ```
