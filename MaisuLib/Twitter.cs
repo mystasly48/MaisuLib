@@ -35,7 +35,7 @@ namespace MaisuLib.Twitter {
     private const string REQUEST_METHOD = "POST";
 
     /// <summary>
-    /// Sets a authorization information
+    /// Sets an authorization information
     /// </summary>
     /// <param name="ConsumerKey">Your ConsumerKey</param>
     /// <param name="ConsumerSecret">Your ConsumerSecret</param>
