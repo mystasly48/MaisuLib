@@ -40,7 +40,7 @@ namespace TwitterSample {
 
 メッセージの送信のみに対応したSlackライブラリ。
 
-Incoming Webhook を登録して生成された `Webhook URL` を指定して  
+[Incoming Webhook](https://api.slack.com/incoming-webhooks) を登録して生成された `Webhook URL` を指定して  
 `Send(text, channel, username, icon_emoji, icon_url)` を実行するだけ。
 
 [サンプル](https://github.com/mystasly48/MaisuLib/blob/master/SlackSample/Program.cs)
