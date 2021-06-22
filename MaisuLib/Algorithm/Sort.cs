@@ -50,7 +50,45 @@ namespace MaisuLib.Algorithm {
     /// <param name="array">Int Array</param>
     /// <returns>Sorted Int Array</returns>
     public static int[] Merge(int[] array) {
-      throw new NotImplementedException();
+      if (array.Length < 2) {
+        return array;
+      }
+
+      int mid = array.Length / 2;
+      int[] left = new int[mid];
+      int[] right = new int[array.Length - mid];
+      for (int i = 0; i < left.Length; i++) {
+        left[i] = array[i];
+      }
+      for (int i = 0; i < right.Length; i++) {
+        right[i] = array[i + mid];
+      }
+
+      left = Merge(left);
+      right = Merge(right);
+      return Merge(left, right);
+    }
+
+    private static int[] Merge(int[] left, int[] right) {
+      int pos = 0, left_pos = 0, right_pos = 0;
+      int size = left.Length + right.Length;
+      int[] result = new int[size];
+
+      while(pos < size) {
+        if (left_pos < left.Length && right_pos < right.Length) {
+          if (left[left_pos] < right[right_pos]) {
+            result[pos++] = left[left_pos++];
+          } else {
+            result[pos++] = right[right_pos++];
+          }
+        } else if (left_pos < left.Length) {
+          result[pos++] = left[left_pos++];
+        } else if (right_pos < right.Length) {
+          result[pos++] = right[right_pos++];
+        }
+      }
+
+      return result;
     }
 
     /// <summary>
